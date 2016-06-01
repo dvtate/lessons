@@ -6,7 +6,6 @@ void fracSimp(long& numerator, long& denominator);
 
 ///finds GCF using Euclid's Algorithm (recursive)
 template <class T>T gcf(T a, T b){
-	std::cout <<"\nk";
 	
 	if (a % 1 != 0 || b % 1 != 0) //throw error if numbers aren't whole (fractions don't have gcfs)
 		throw std::runtime_error("GCF(): Numbers given weren\'t whole");
@@ -22,7 +21,7 @@ int main(){
 
 	long num,den;//initialize numerator and denominator variables
 	decToFrac(dec, num, den);//assign fraction values
-	std::cout <<"\n = "<<num <<" / " <<den <<"\n";
+	std::cout <<"\n = "<<num <<" / " <<den <<std::endl;
 	return 0;
 }
 
@@ -52,7 +51,6 @@ void decToFrac(long double decimal, long& numerator, long& denominator){
 	while((dec_copy - (unsigned long int) dec_copy) > 0){//while it has numbers after decimal place
 		dec_copy *= 10;//move decimal place back one
 		after++;//increment places after decimal counter
-		std::cout <<"fuck\n";
 	}
 	numerator = isNegative * decimal * pow(10, after);//number without decimal place (12.2340 -> 122340)
 	denominator = pow(10, after); // 12.234 -> 1000
