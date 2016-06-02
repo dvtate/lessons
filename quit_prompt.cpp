@@ -15,7 +15,7 @@ int main(){
 	else //user is weird
 		std::cout <<"         You're really pushing my buttons...\n";
 	
-	
+
 	//Ask them again: 	
 	std::cout <<"\n      Last chance: Quit program (y/N)? ";
 	std::cin >>response;
