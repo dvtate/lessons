@@ -3,13 +3,9 @@
 #include <stdlib.h> // malloc()
 #include <string.h> // strcpy()
 
-// C is a subset of C++...
-// I only made this a C program because modern C++ compilers give 
-// warnings about setting a character pointer to a string constant.
 
 // you can compile this just as you would a C++ program.
-// however, using gcc instead of g++ will give better results. 
-
+// however, using gcc instead of g++ is cooler. :) 
 
 int main(){
 
