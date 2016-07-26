@@ -30,7 +30,7 @@ int main(){
 
 	std::cout <<"How many numbers to sort?\n";
 	
-	size_t length; // NOTE: size_t = long int
+	size_t length; // NOTE: size_t = unsigned long int
 	std::cin >>length;
 
 	// allocate some memory to hold our array
