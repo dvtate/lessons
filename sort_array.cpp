@@ -32,7 +32,7 @@ int main(){
   std::cin >>length;
 
   // allocate some memory to hold our array
-  long double userArray[length];
+  double userArray[length];
 
   std::cout <<"Enter " <<length <<" numbers:\n";
 
