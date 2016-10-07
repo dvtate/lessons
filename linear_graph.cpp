@@ -1,35 +1,54 @@
-#include<iostream>
-
-void linearGraph(double m, double x, double b){
-	//plot y-value at given x-value
-	for(int i = 0; i < (m * x + b); i++)//run once for each whole number 
-		std::cout <<"█";
-
-	std::cout <<"   : f(" <<x <<")=" <<(float) m * x + b <<" \n" ;
-}
-
+#include <iostream>
+#include <math.h> // round()
 
 int main(){
 
-	float m, b;//f(x) = mx+b
-	int x_min, x_max;//min_x <= x <= max_x
-		
-	// get the function from the user
-	std::cout <<"\nSlope: ";
+	double m, b;
+	
+	std::cout <<"\nm = ";
 	std::cin >>m;
-	std::cout <<"Y-intercept: ";
+	std::cout <<"b = ";
 	std::cin >>b;
 
-	// get the domain from the user
-	std::cout <<"X-min: ";
-	std::cin >>x_min;
-	std::cout <<"X-max: ";
-	std::cin >>x_max;
-	
-	
-	if (x_min > x_max) // Doesn't get graphed
-		std::cout <<"\nWARNING:\n  Your x-min is greater than your x-max.\n";
+	long int xMin, xMax;
+	std::cout <<"\nx-min = ";
+	std::cin >>xMin;
+	std::cout <<"x-max = ";
+	std::cin >>xMax;
 
-	for(int i = x_min; i <= x_max; i++)//iterate through given x-values
-		linearGraph(m, i, b);//plot y-value for each x-value	
+	// going from highest to lowest
+	if (xMin > xMax) {
+		long int minCpy = xMin;
+		xMin = xMax;
+		xMax = minCpy;
+	}
+
+	// print a number of bricks coresponding to the output
+	for (; xMin <= xMax; xMin++) {
+		// print the domain value
+		std::cout <<std::endl <<xMin <<"\t: ";
+		long int range = round(m * xMin + b);
+
+		// print the sign and 
+		if (range == 0) // value is zero
+			std:: cout <<"(0)";
+
+		
+		else if (range > 0) {
+
+			std::cout << "(+) ";
+
+			for (; range > 0; range--)
+				std::cout <<"█";
+		
+		} else {
+			std::cout << "(-) ";
+
+			for (; range < 0; range++)
+				std::cout <<"█";
+		}
+
+	}
+
+	std::cout <<std::endl;
 }
