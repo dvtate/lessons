@@ -25,10 +25,10 @@ int main(){
 
 	// copy the words into the memory you have allocated.
 	strcpy(firstWord, "HAPPY");
-	strcpy(secondWord,"BIRTHDAY!");
+	strcpy(secondWord,"BIRTHDAY");
 
         // lets print the words to the console :)
-	printf("%s %s\n", firstWord, secondWord);
+	printf("%s %s!\n", firstWord, secondWord);
 
 
 	// any memory allocated via malloc must be free()'ed to prevent
