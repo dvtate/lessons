@@ -29,7 +29,8 @@ void printTimeCR(  // please excuse my Danish abbreviations xD
 	
 	// print it out:
 	std::cout <<"\rTime since start: " <<dag <<" days " <<(int)t <<" hours "
-	          <<(int)min <<" minutes " <<(int)sek <<" seconds (" <<spin <<")   ";
+	          <<(int)min <<" minutes " <<(int)sek <<" seconds (" <<spin <<")   "
+		  <<std::flush;
 	
 	//wait:
 	usleep(0.25 * 1000000); // do nothing for 0.25 seconds (takes time in micro-seconds)
