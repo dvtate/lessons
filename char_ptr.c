@@ -1,6 +1,6 @@
 #include <stdio.h> // printf()
 
-#include <stdlib.h> // malloc()
+#include <stdlib.h> // malloc(), free()
 #include <string.h> // strcpy()
 
 
@@ -12,10 +12,9 @@ int main(){
 	// declaring our strings
 	char *firstWord, *secondWord;
 
-	// although the compiler is smart enough to allocate the
-	// memory needed by these strings for you, it isn't a good
-	// practice to rely on this, and is frowned upon by the standards.
-	// we can use malloc to allocate some memory :)
+	// although the compiler is smart enough to create const strings,
+	// we can use malloc to allocate some memory for strings which we
+	// can change. :)
 	
 	// there are 6 characters in "HAPPY" including the null terminator
 	// each character uses 1 byte of memory so we allocate 6 bytes and
@@ -25,7 +24,7 @@ int main(){
 
 	// copy the words into the memory you have allocated.
 	strcpy(firstWord, "HAPPY");
-	strcpy(secondWord,"BIRTHDAY");
+	strcpy(secondWord, "BIRTHDAY");
 
         // lets print the words to the console :)
 	printf("%s %s!\n", firstWord, secondWord);
@@ -33,7 +32,7 @@ int main(){
 
 	// any memory allocated via malloc must be free()'ed to prevent
 	// memory leaks. Here it isn't needed since the memory is freed
-	// when the program ends.
+	// when the program ends, but it's a good habit to get into.
 	free(firstWord);
 	free(secondWord);
 
