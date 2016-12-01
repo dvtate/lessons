@@ -19,9 +19,7 @@ inline void printArray(int* arr, size_t len)
 	for (size_t i = 1; i < len; i++)
 		std::cout <<", " <<*arr++;
 
-
 }
-
 
 int main(){
 
@@ -44,5 +42,4 @@ int main(){
 	std::cout <<a;
 
 	*/
-	
 }
